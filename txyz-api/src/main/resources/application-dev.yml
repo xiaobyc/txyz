@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://120.78.199.98:3306/txyz20181127?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false&allowMultiQueries=true
+    username: root
+    password: Txyz@3306@bk
+    hikari:
+      connection-test-query: SELECT 1 FROM DUAL
+      minimum-idle: 10
+      maximum-pool-size: 100
+      max-lifetime: 1800000
+  redis:
+    host: 127.0.0.1
+    port: 6380
+    password:
+    jedis:
+      pool:
+        max-idle: 10
+        max-active: 600
+        max-wait: -1
+    timeout: 10000

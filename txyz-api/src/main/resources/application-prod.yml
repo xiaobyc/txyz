@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.6.186:3306/yykt?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false&allowMultiQueries=true
+    username: yykt
+    password: pass4yykt
+    hikari:
+      connection-test-query: SELECT 1 FROM DUAL
+      minimum-idle: 10
+      maximum-pool-size: 100
+      max-lifetime: 1800000
+
+
+  redis:
+    host: 192.168.40.143
+    port: 6379
+    password: yykt
+    jedis:
+      pool:
+        max-idle: 10
+        max-active: 600
+        max-wait: -1
+    timeout: 10000
+  data:
+    mongodb:
+      username: yykt
+      password: pass4monggo
+      database: yykt
+      host: 192.168.6.189
+      port: 30000
+
+# 自定义常量
+aamty: http://192.168.36.101:13022
+apimgt.sendMsg: http://manage.tianyuyun.cn:22016/apimgt/rest/sms/sendSms
+apimgt.sendMasNew: http://192.168.50.145:10016/smsService/sms/sendSms
+apimgt.signName: 鱼渔课堂
+apimgt.templateCode: SMS_91880093
+appPath: https://www.yuyuketang.com/yykt-app/
+apiPath: https://www.yuyuketang.com:7443/yykt-api/
+password: 12345678
+cssUrl: https://www.yuyuketang.com/css
+verifyReceiptUrl: https://buy.itunes.apple.com/verifyReceipt
+singsound-domain: yuyu.newbenglish.com
+filePath: /home/yykt/yyktFiles/uploadFile
+QUES_PATH: /home/yykt/yyktFiles/svg
+svg_pre_path: https://www.yuyuketang.com/svg

@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.90.52:3306/yykt?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false&allowMultiQueries=true
+    username: yykt
+    password: yykt!@#*
+    hikari:
+      connection-test-query: SELECT 1 FROM DUAL
+      minimum-idle: 10
+      maximum-pool-size: 100
+      max-lifetime: 1800000
+
+
+  redis:
+    host: 192.168.30.185
+    port: 6379
+    password: tianyu
+    jedis:
+      pool:
+        max-idle: 10
+        max-active: 600
+        max-wait: -1
+    timeout: 10000
+  data:
+    mongodb:
+      username: yykt
+      password: pass4monggo
+      database: yykt-mongo
+      host: 192.168.30.185
+      port: 27017
+
+# 自定义常量
+aamty: http://116.211.105.45:13022
+apimgt.sendMsg: http://manage.tianyuyun.cn:22016/apimgt/rest/sms/sendSms
+apimgt.sendMasNew: http://192.168.30.86:41003/smsService/sms/sendSms
+apimgt.signName: 鱼渔课堂
+apimgt.templateCode: SMS_91880093
+appPath: http://app.yuyu.t.huijiaoyun.com/yykt-app/
+apiPath: http://api.yuyu.t.huijiaoyun.com/yykt-api/
+password: 12345678
+cssUrl: http://ued.t.huijiaoyun.com/tianyu_edu_dev
+verifyReceiptUrl: https://sandbox.itunes.apple.com/verifyReceipt
+singsound-domain: yuyu.singsound.com
+filePath: /home/yykt/yyktFiles/uploadFile
+QUES_PATH: /home/yykt/yyktFiles/svg
+svg_pre_path: http://manage.yuyu.t.huijiaoyun.com/svg
