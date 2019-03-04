@@ -2,9 +2,9 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.6.186:3306/yykt?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false&allowMultiQueries=true
-    username: yykt
-    password: pass4yykt
+    url: jdbc:mysql://120.78.199.98:3306/txyz20181127?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false&allowMultiQueries=true
+    username: root
+    password: Txyz@3306@bk
     hikari:
       connection-test-query: SELECT 1 FROM DUAL
       minimum-idle: 10
@@ -13,8 +13,8 @@ spring:
 
 
   redis:
-    host: 192.168.40.143
-    port: 6379
+    host: 47.92.234.1
+    port: 6380
     password: yykt
     jedis:
       pool:

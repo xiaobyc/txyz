@@ -11,7 +11,7 @@ spring:
       maximum-pool-size: 100
       max-lifetime: 1800000
   redis:
-    host: 127.0.0.1
+    host: 47.92.234.1
     port: 6380
     password:
     jedis:
