@@ -1,18 +1,15 @@
 package com.txyz.test.controller;
 
 import com.baomidou.mybatisplus.plugins.Page;
-import com.txyz.common.R;
 import com.txyz.common.cache.redis.RedisUtils;
 import com.txyz.common.constant.Cons;
+import com.txyz.common.result.R;
 import com.txyz.test.model.CrmUser;
 import com.txyz.test.service.CrmService;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "demo")

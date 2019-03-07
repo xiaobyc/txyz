@@ -9,6 +9,8 @@ public class ProductRedisKey {
 
     private static  final String PRODUCT_BANNER="product_banner";
 
+    private static final String INDEX_PRODUCT_MODULE="index_product_module";
+
     /**
      * 首页商品目录key
      * @return
@@ -23,5 +25,13 @@ public class ProductRedisKey {
      */
     public static  String getProductBanner(){
         return PRODUCT_BANNER;
+    }
+
+    /**
+     * 首页module 缓存
+     * @return
+     */
+    public static String getIndexProductModulekey(){
+        return INDEX_PRODUCT_MODULE;
     }
 }

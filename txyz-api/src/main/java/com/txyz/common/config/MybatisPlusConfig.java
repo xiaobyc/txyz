@@ -19,7 +19,6 @@ public class MybatisPlusConfig {
     public PaginationInterceptor paginationInterceptor() {
         PaginationInterceptor interceptor=new PaginationInterceptor();
         interceptor.setDialectType("mysql");
-        //interceptor.setOptimizeType("aliDruid");
         return interceptor;
     }
 }

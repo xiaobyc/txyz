@@ -1,4 +1,5 @@
-package com.txyz.common;
+package com.txyz.common.result;
+
 
 
 import com.txyz.common.constant.ResponseCode;
@@ -7,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * Created by alex on 2018/11/16.
  */
 public class R extends HashMap<String,Object> {
     private static final long serialVersionUID = 1L;

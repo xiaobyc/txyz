@@ -6,11 +6,10 @@ public class RException extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
     private String retCode;
-    private String retDesc="000500";
+    private String retDesc;
 
     public RException(String msg) {
         super(msg);
-        this.retCode="000500";
         this.retDesc = msg;
     }
 
