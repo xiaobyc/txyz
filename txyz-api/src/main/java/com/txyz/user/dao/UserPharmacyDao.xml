@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.txyz.user.dao.UserPharmacyDao">
+
+    <update id="updateUserPharmacy" parameterType="com.txyz.user.request.UserPharmacyRequest">
+        update txyz_user_pharmacy
+        <trim  prefix="set" prefixOverrides=",">
+            <if test="pharmacy.certImg!=null and pharmacy.certImg!=''">
+                cert_img=#{pharmacy.certImg},
+            </if>
+            <if test="pharmacy.addressImg!=null and pharmacy.addressImg!=''">
+                address_img=#{pharmacy.addressImg},
+            </if>
+            <if test="pharmacy.otherImg!=null and pharmacy.otherImg!=''">
+                other_img=#{pharmacy.otherImg},
+            </if>
+            user_id=#{pharmacy.userId}
+        </trim>
+        WHERE  user_id=#{pharmacy.userId}
+    </update>
+
+</mapper>

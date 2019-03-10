@@ -21,4 +21,9 @@ public class UserServiceImpl extends ServiceImpl<UserDao,User> implements UserSe
         wrapper.setEntity(user);
         return baseMapper.selectList(wrapper);
     }
+
+    @Override
+    public void updateUserPassword(Long userId, String password) {
+        baseMapper.updateUserPassword(userId,password);
+    }
 }

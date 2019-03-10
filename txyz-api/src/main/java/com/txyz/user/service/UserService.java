@@ -12,4 +12,11 @@ public interface UserService extends IService<User> {
      * @return
      */
     public List<User> loginUserByAccountAndPassword(String account);
+
+    /**
+     * 根据用户ID修改用户密码
+     * @param userId
+     * @param password
+     */
+    public void updateUserPassword(Long userId,String password);
 }

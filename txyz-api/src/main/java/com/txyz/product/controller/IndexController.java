@@ -2,15 +2,18 @@ package com.txyz.product.controller;
 
 import com.alibaba.fastjson.JSONArray;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.plugins.Page;
 import com.txyz.common.anno.UserLoginToken;
 import com.txyz.common.cache.redis.RedisUtils;
 import com.txyz.common.cache.redis.TimeRedisKey;
 import com.txyz.common.constant.Cons;
 import com.txyz.common.result.R;
+import com.txyz.product.model.ButtonArea;
 import com.txyz.product.model.ProductBanner;
 import com.txyz.product.model.ProductCategoryModule;
 import com.txyz.product.model.ProductCategoryTab;
 import com.txyz.product.rediskey.ProductRedisKey;
+import com.txyz.product.service.ButtonAreaService;
 import com.txyz.product.service.ProductBannerService;
 import com.txyz.product.service.ProductCategoryModuleService;
 import com.txyz.product.service.ProductCategoryTabService;
@@ -34,12 +37,13 @@ public class IndexController {
     @Autowired
     private ProductCategoryModuleService moduleService;
     @Autowired
+    private ButtonAreaService buttonAreaService;
+    @Autowired
     private RedisUtils redisUtils;
     /**
      * 首页顶部药品列表
      * @return
      */
-    @UserLoginToken
     @RequestMapping(value = "indexProductCateList",consumes = Cons.JSON_UTF8,produces = Cons.JSON_UTF8)
     @ResponseBody
     public R indexProductCateList(){
@@ -91,7 +95,6 @@ public class IndexController {
      * 首页商品模块列表
      * @return
      */
-    @UserLoginToken
     @RequestMapping(value = "indexModuleList",consumes = Cons.JSON_UTF8,produces = Cons.JSON_UTF8)
     @ResponseBody
     public R indexModuleList(){
@@ -109,5 +112,19 @@ public class IndexController {
             }
         }
         return R.ok().put("list",list);
+    }
+
+    /**
+     * 首页按钮区列表
+     * @return
+     */
+    @RequestMapping(value = "indexButtonArea",consumes = Cons.JSON_UTF8,produces = Cons.JSON_UTF8)
+    @ResponseBody
+    public R indexButtonArea(){
+        Page<ButtonArea> page = new Page<>();
+        page.setSize(4);
+        page.setCurrent(1);
+          page =  buttonAreaService.selectPage(page);
+          return R.ok().put("list",page.getRecords());
     }
 }
